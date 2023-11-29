@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
+
 const server = http.createServer(app);
 const io = new Server(server);
 
